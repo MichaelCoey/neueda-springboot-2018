@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body {
+	font-family: 'Open Sans', sans-serif;
+    margin: 0 auto;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+}
+
+
+
+#footer {
+    background-color: #037584;
+    color: white;
+}
