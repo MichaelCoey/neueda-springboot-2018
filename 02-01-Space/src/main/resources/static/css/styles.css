@@ -15,9 +15,36 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald', sans-serif;
 }
 
+.row {
+    padding: 30px;
+}
+
+.btn-secondary {
+    color: #A8A8A8;
+    background-color: #343a40;
+    border-color: #6c757d;
+}
+
+.btn-link {
+	font-size: 30px;
+    font-weight: 400;
+	color: white;
+    background-color: transparent;
+	text-decoration: none;
+}
+.btn-link:hover {
+    font-weight: 400;
+    color: #C1C1C1;
+    background-color: transparent;
+	text-decoration: none;
+}
+
+#homepageSlider {
+	background-color: #000000;
+}
 
 
 #footer {
-    background-color: #037584;
+    background-color: #2A2A2A;
     color: white;
 }
