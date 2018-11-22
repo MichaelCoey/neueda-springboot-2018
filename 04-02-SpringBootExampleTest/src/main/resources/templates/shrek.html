@@ -25,7 +25,24 @@
 			<div id = "mainContent">	
 				<section class= "row">
 					<article class = "col-12">
-						<h1>This is the Homepage, please look around for the movies you want.</h1>
+						
+						<table class = "table table-striped">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Author</th>
+									<th>Image</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="cast: ${shrekCast}">
+									<td th:text=${cast.character}>Shrek</td>
+									<td th:text=${cast.author}>Shrek</td>
+									<td><img src="../static/img/Shrek.png" th:src="@{/img/}+${cast.image}"></td>
+								</tr>
+							</tbody>
+						</table>
+						
 					</article>
 				</section>
 			</div>

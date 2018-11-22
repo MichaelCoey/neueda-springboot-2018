@@ -15,6 +15,11 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald', sans-serif;
 }
 
+img{
+	width: 100px;
+	height:300px;
+}
+
 .jumbotron {
 
     margin-bottom: 0;

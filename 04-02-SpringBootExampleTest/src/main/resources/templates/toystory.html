@@ -22,13 +22,29 @@
 		
 		<div class = "container-fluid">
 					
-			<div id = "mainContent">	
-				<section class= "row">
-					<article class = "col-12">
-						<h1>This is the Homepage, please look around for the movies you want.</h1>
-					</article>
-				</section>
-			</div>
+					
+					<div class = "row">
+					
+						<div class="card" style="margin-right:30px; width: 18rem;" th:each="cast: ${toyStoryCast}">
+							  <img class="card-img-top" src="../static/img/Woody.png" th:src="@{/img/}+${cast.image}">
+							  <div class="card-body">
+							    <h5 class="card-title" th:text=${cast.character}>Card title</h5>
+							    <p class="card-text" th:text=${cast.author}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							  </div>
+							</div>
+							
+							<p>This application was devleoped at:</p>
+							
+							<p th:utext="${locationFrame}"></p>
+							
+					</div>
+					
+					<p>This application was developed at:</p>
+							
+							<p th:utext="${locationFrame}"></p>
+					
+					
+
 		
 		</div>
 		
