@@ -1,0 +1,72 @@
+<!Doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="css/styles.css"/>
+		<link href = "https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet"/>
+		<title th:text="${pageTitle}">SC</title>
+	</head>
+	<body>
+	
+		<div class="jumbotron text-center">
+			<h1 class="display-4">Biggest Building By Footprint</h1>
+		</div>
+		
+		<nav th:replace="layouts/nav :: navFragment">
+			
+		</nav>
+		
+		<div class = "container-fluid">
+					
+			<div id = "mainContent">
+				
+				<section class= "row col-lg-12">
+				
+						<table class = "table table-striped">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Country</th>
+									<th>Place</th>
+									<th>Floor Area</th>
+									<th>Volume</th>
+									<th>Description</th>
+									<th>Image</th>
+									<th>Google Map</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="building: ${footprintBuildings}">
+									<td th:text=${building.name}></td>
+									<td th:text=${building.country}></td>
+									<td th:text=${building.place}></td>
+									<td th:text=${building.footprint}></td>
+									<td th:text=${building.lengthWidth}></td>
+									<td th:text=${building.description}></td>
+									<td><img style ="width:300px; height:300px;" src="../static/img/Building.png" th:src="@{/img/}+${building.image}"></td>
+									<td th:utext=${building.googleMap}></td>
+								</tr>
+							</tbody>
+						</table>
+				
+				</section>
+				
+			</div>
+			
+
+		
+		</div>
+		
+							<footer th:replace="layouts/footer :: footerFragment">
+			
+		</footer>
+		
+		<script src="js/jquery.slim.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
