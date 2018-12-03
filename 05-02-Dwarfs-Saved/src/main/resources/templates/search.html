@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="css/styles.css"/>
+		<link href = "https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet"/>
+		<title>Home page</title>
+	</head>
+	<body>
+	
+	
+			<div style = "background-color: #62ddd7;" class="jumbotron text-center">
+				<h1 class="display-4">Home page, lets learn about Dwarfs</h1>
+			</div>
+			
+			<nav th:replace="layouts/nav :: navFragment">
+			
+			</nav>
+		
+		<div class = "container-fluid">
+	
+			<div id = "mainContent">
+				
+				<section class= "row">
+					<article class = "col-12">
+					<br/>
+					<div class="dropdown">
+					  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    Search By
+					  </button>
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					    <a class="dropdown-item" href="#">Name</a>
+					    <a class="dropdown-item" href="#">Author</a>
+					  </div>
+					</div>
+					<br/>
+					
+					<form action="/action_page.php">
+					  Search Criteria:<br>
+					  <input type="text" name="firstname" value="....."> <input type="submit" value="Search">
+					  <br>
+					</form> 
+					
+					<br/>
+					
+					</article>
+				</section>
+				
+			</div>
+			
+		</div>
+		
+		<nav th:replace="layouts/footer :: footerFragment">
+			
+		</nav>
+		
+		
+		
+		<script src="js/jquery.slim.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
