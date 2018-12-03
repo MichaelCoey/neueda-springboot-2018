@@ -1,4 +1,4 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
 	<head>
 		<meta charset="UTF-8"/>
@@ -8,59 +8,54 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="css/styles.css"/>
 		<link href = "https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet"/>
-		<title th:text="${pageTitle}">SC</title>
+		<title>Tolkien Dwarves</title>
 	</head>
 	<body>
-	
-		<div class="jumbotron text-center">
-			<h1 class="display-4">Biggest Building By Footprint</h1>
-		</div>
 		
-		<nav th:replace="layouts/nav :: navFragment">
+			<div style = "background-color: #62ddd7;" class="jumbotron text-center">
+				<h1 class="display-4">Tolkien Dwarves</h1>
+			</div>
+		
+			<nav th:replace="layouts/nav :: navFragment">
 			
-		</nav>
+			</nav>
+		
 		
 		<div class = "container-fluid">
-					
+
 			<div id = "mainContent">
 				
-				<section class= "row col-lg-12">
-				
+				<section class= "row">
+					<article class = "col-12">
+						
 						<table class = "table table-striped">
 							<thead>
 								<tr>
 									<th>Name</th>
-									<th>Country</th>
-									<th>Place</th>
-									<th>Floor Area</th>
-									<th>Volume</th>
-									<th>Description</th>
+									<th>Author</th>
 									<th>Image</th>
-									<th>Google Map</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr th:each="building: ${footprintBuildings}">
-									<td th:text=${building.name}></td>
-									<td th:text=${building.country}></td>
-									<td th:text=${building.place}></td>
-									<td th:text=${building.footprint}></td>
-									<td th:text=${building.lengthWidth}></td>
-									<td th:text=${building.description}></td>
-									<td><img style ="width:300px; height:300px;" src="../static/img/Building.png" th:src="@{/img/}+${building.image}"></td>
-									<td th:utext=${building.googleMap}></td>
+								<tr th:each="dwarf: ${tolkienDwarfs}">
+									<td th:text=${dwarf.name}>Bofur</td>
+									<td th:text=${dwarf.author}>Tolkien</td>
+									<td><img src="../static/img/Bofur.png" th:src="@{/img/}+${dwarf.image}"></td>
 								</tr>
 							</tbody>
 						</table>
-				
+						
+					</article>
 				</section>
 				
 			</div>
 			
-
-		
 		</div>
-
+		
+		<nav th:replace="layouts/footer :: footerFragment">
+			
+		</nav>
+		
 		
 		<script src="js/jquery.slim.min.js"></script>
 		<script src="js/popper.min.js"></script>

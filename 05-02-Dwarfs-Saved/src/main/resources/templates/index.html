@@ -1,4 +1,4 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
 	<head>
 		<meta charset="UTF-8"/>
@@ -8,31 +8,42 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="css/styles.css"/>
 		<link href = "https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet"/>
-		<title>Homepage</title>
+		<title>Home page</title>
 	</head>
 	<body>
 	
-		<div class="jumbotron text-center">
-			<h1 class="display-4">Building Information</h1>
+	
+			<div style = "background-color: #62ddd7;" class="jumbotron text-center">
+				<h1 class="display-4">Home page, lets learn about Dwarfs</h1>
+			</div>
+			
+			<nav th:replace="layouts/nav :: navFragment">
+			
+			</nav>
+		
+		<div class = "container-fluid">
+	
+			<div id = "mainContent">
+				
+				<section class= "row">
+					<article class = "col-12">
+					<center>
+						</br>
+						<h1>This is the Home page</h1>
+						<h2>Please navigate around to find the page you are looking for.</h2>
+						</br>
+					</center>
+					</article>
+				</section>
+				
+			</div>
+			
 		</div>
 		
-		<nav th:replace="layouts/nav :: navFragment">
+		<nav th:replace="layouts/footer :: footerFragment">
 			
 		</nav>
 		
-		<div class = "container-fluid">
-					
-			<div id = "mainContent">	
-				<section class= "row">
-					<article class = "col-12">
-						<h1>This is the Homepage, please look around for the facts you want.</h1>
-					</article>
-				</section>
-			</div>
-		
-		</div>
-		
-
 		
 		
 		<script src="js/jquery.slim.min.js"></script>
