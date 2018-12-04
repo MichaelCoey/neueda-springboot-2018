@@ -19,7 +19,9 @@ h1, h2, h3, h4, h5, h6 {
 
     margin-bottom: 0;
     background-color: #62ddd7;
+    background-image: url(/img/jumbotronbackground.jpg);
     color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
     border-radius: 0 ;
 
 }

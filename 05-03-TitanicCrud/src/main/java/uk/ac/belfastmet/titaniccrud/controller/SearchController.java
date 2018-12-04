@@ -24,8 +24,17 @@ public class SearchController {
 	@GetMapping("/searchid")
 	public String searchId(@RequestParam("id") Integer passengerId, Model model)
 	{
-		model.addAttribute("pageTitle", "Search Results By Name");
+		model.addAttribute("pageTitle", "Search Results By ID");
 		model.addAttribute("Passengers", this.passengerRepository.findByPassengerId(passengerId));
+		
+		return "passengers.html";
+	}
+	
+	@GetMapping("/searchname")
+	public String searchName(@RequestParam("name") String name, Model model)
+	{
+		model.addAttribute("pageTitle", "Search Results By Name");
+		model.addAttribute("Passengers", this.passengerRepository.findByNameContaining(name));
 		
 		return "passengers.html";
 	}
