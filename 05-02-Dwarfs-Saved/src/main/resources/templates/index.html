@@ -27,12 +27,41 @@
 				
 				<section class= "row">
 					<article class = "col-12">
-					<center>
-						<br/>
-						<h1>This is the Home page</h1>
-						<h2>Please navigate around to find the page you are looking for.</h2>
-						<br/>
-					</center>
+					
+						<form action="/searchid" method="get">
+						<div class="form-group">
+							<label>ID</label>
+							<input name="id" type="text" class="form-control" placeholder="Enter a Dwarf ID to search"/>
+							<button type="submit" class = "btn btn-primary">Search</button>
+						</div>
+						</form>
+						
+						<form action="/searchname" method="post">
+						<div class="form-group">
+							<label>Name</label>
+							<input name="name" type="text" class="form-control" placeholder="Enter a Dwarf Name to search"/>
+							<button type="submit" class = "btn btn-primary">Search</button>
+						</div>
+						</form>
+						
+						<form action="/searchauthor" method="get">
+						<div class="form-group">
+							<label>Name</label>
+							<input name="author" type="text" class="form-control" placeholder="Enter a Dwarf Author to search"/>
+							<button type="submit" class = "btn btn-primary">Search</button>
+						</div>
+						</form>
+						
+						<form action="/searchnameauthor" method="get">
+						<div class="form-group">
+							<label>Name &amp; Author</label>
+							<input name="name" type="text" class="form-control" placeholder="Enter a Dwarf Name to search"/>
+							<input name="author" type="text" class="form-control" placeholder="Enter a Dwarf Author to search"/>
+							<button type="submit" class = "btn btn-primary">Search</button>
+						</div>
+						</form>
+						
+						
 					</article>
 				</section>
 				
