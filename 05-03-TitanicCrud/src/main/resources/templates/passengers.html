@@ -27,6 +27,10 @@
 				<section class= "row">
 					<article class = "col-12">
 						
+						<div class="alert alert-success" role ="alert" th:if="${message}">
+							<p th:text="${message} + ': ' + ${messageId}"></p>
+						</div>
+						
 						<table class = "table table-striped">
 							<thead>
 								<tr>
@@ -59,7 +63,7 @@
 									<td th:text=${passenger.fare}></td>
 									<td th:text=${passenger.cabin}></td>
 									<td th:text=${passenger.embarked}></td>
-									<td><a href="" th:href="@{/view/}+${passenger.passengerId}">View</a><a href=""> Edit</a><a style="color:red;" href=""> Delete</a></td>
+									<td><a href="" th:href="@{/view/}+${passenger.passengerId}">View</a><a href=""> Edit</a><a style="color:red;" href="" th:href="@{/delete/}+${passenger.passengerId}"> Delete</a></td>
 								</tr>
 							</tbody>
 						</table>
