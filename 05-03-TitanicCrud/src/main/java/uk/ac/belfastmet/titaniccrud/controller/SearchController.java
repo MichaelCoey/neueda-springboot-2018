@@ -21,6 +21,7 @@ public class SearchController {
 	}
 	
 	
+	
 	@GetMapping("/searchid")
 	public String searchId(@RequestParam("id") Integer passengerId, Model model)
 	{
@@ -37,6 +38,19 @@ public class SearchController {
 		model.addAttribute("Passengers", this.passengerRepository.findByNameContaining(name));
 		
 		return "passengers.html";
+		
+		
+	}
+	
+	@GetMapping("/searchsex")
+	public String searchSex(@RequestParam("sex") String sex, Model model)
+	{
+		model.addAttribute("pageTitle", "Search Results By Sex");
+		model.addAttribute("Passengers", this.passengerRepository.findBySex(sex));
+		
+		return "passengers.html";
+		
+		
 	}
 
 }

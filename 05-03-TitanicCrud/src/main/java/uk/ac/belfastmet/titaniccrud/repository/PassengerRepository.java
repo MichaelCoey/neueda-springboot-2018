@@ -15,5 +15,7 @@ public interface PassengerRepository extends CrudRepository<Passenger, Integer> 
 
 	ArrayList<Passenger> findByNameContaining(String name);
 
+	ArrayList<Passenger> findBySex(String sex);
+
 
 }
