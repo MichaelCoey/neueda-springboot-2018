@@ -27,9 +27,12 @@
 				<section class= "row">
 					<article class = "col-12">
 						
-						<div class="alert alert-success" role ="alert" th:if="${message}">
+						<div id="successDiv" class="alert alert-success" role ="alert" th:if="${message}">
 							<p th:text="${message} + ': ' + ${messageId}"></p>
+							<button id="successOk" type="button" class="btn btn-primary">Ok</button>
 						</div>
+						
+						<button type="button" class="btn btn-success">Add Record +</button>
 						
 						<table class = "table table-striped">
 							<thead>
@@ -63,7 +66,10 @@
 									<td th:text=${passenger.fare}></td>
 									<td th:text=${passenger.cabin}></td>
 									<td th:text=${passenger.embarked}></td>
-									<td><a href="" th:href="@{/view/}+${passenger.passengerId}">View</a><a href=""> Edit</a><a style="color:red;" href="" th:href="@{/delete/}+${passenger.passengerId}"> Delete</a></td>
+									<td><a href="" th:href="@{/view/}+${passenger.passengerId}">View</a>
+									<a href=""> Edit</a>
+									<a style="color:red;" href="" th:href="@{/delete/}+${passenger.passengerId}"> Delete</a>
+									</td>
 								</tr>
 							</tbody>
 						</table>
@@ -82,5 +88,12 @@
 		<script src="js/jquery.slim.min.js"></script>
 		<script src="js/popper.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script>
+		$(document).ready(function(){
+		    $("#successOk").click(function(){
+		    	$("#successDiv").remove();
+		    });
+		});
+		</script>
 	</body>
 </html>
