@@ -15,6 +15,10 @@
 			<div style = "background-color: #62ddd7;" class="jumbotron text-center">
 				<h1 th:text="${pageTitle} + ' ' + Dwarfs" class="display-4">Dwarfs</h1>
 			</div>
+			
+			<div class="alert alert-success" role ="alert" th:if="${message}">
+				<p th:text="${message} + ': ' + ${messageId}"></p>
+			</div>
 
 			<nav th:replace="layouts/nav :: navFragment">
 			
@@ -41,7 +45,7 @@
 									<td th:text=${dwarf.name}>Happy</td>
 									<td th:text=${dwarf.author}>Disney</td>
 									<td><img src="../static/img/Happy.png" th:src="@{/img/}+${dwarf.image}"></td>
-									<td><a href="#" th:href="@{/view/}+${dwarf.dwarfId}">View</a><a href=""> Edit</a><a style="color:red;" href=""> Delete</a></td>
+									<td><a href="#" th:href="@{/view/}+${dwarf.dwarfId}">View</a><a href=""> Edit</a><a style="color:red;" href="" th:href="@{/delete/}+${dwarf.dwarfId}"> Delete</a></td>
 								</tr>
 							</tbody>
 						</table>
