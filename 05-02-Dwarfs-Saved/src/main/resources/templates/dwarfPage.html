@@ -33,6 +33,7 @@
 									<th>Name</th>
 									<th>Author</th>
 									<th>Image</th>
+									<th>Controls</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -40,6 +41,7 @@
 									<td th:text=${dwarf.name}>Happy</td>
 									<td th:text=${dwarf.author}>Disney</td>
 									<td><img src="../static/img/Happy.png" th:src="@{/img/}+${dwarf.image}"></td>
+									<td><a href="#" th:href="@{/view/}+${dwarf.dwarfId}">View</a><a href=""> Edit</a><a style="color:red;" href=""> Delete</a></td>
 								</tr>
 							</tbody>
 						</table>

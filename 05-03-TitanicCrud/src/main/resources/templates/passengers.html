@@ -5,8 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
-		<link rel="stylesheet" href="css/bootstrap.min.css"/>
-		<link rel="stylesheet" href="css/styles.css"/>
+		<link rel="stylesheet" href="../css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="../css/styles.css"/>
 		<link href = "https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet"/>
 		<title th:text=${pageTitle}>Passenger Page</title>
 	</head>
@@ -42,6 +42,7 @@
 									<th>Fare</th>
 									<th>Cabin</th>
 									<th>Embarked</th>
+									<th>Controls</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -58,6 +59,7 @@
 									<td th:text=${passenger.fare}></td>
 									<td th:text=${passenger.cabin}></td>
 									<td th:text=${passenger.embarked}></td>
+									<td><a href="" th:href="@{/view/}+${passenger.passengerId}">View</a><a href=""> Edit</a><a style="color:red;" href=""> Delete</a></td>
 								</tr>
 							</tbody>
 						</table>
