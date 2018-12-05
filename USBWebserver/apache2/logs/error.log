@@ -1,4 +1,0 @@
-[Tue Dec 04 14:08:13.136756 2018] [mpm_winnt:notice] [pid 10820:tid 816] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
-[Tue Dec 04 14:08:13.149635 2018] [mpm_winnt:notice] [pid 10820:tid 816] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
-[Tue Dec 04 14:08:13.149635 2018] [core:notice] [pid 10820:tid 816] AH00094: Command line: 'C:\\Users\\coe18161676\\Documents\\neueda-git\\neueda-springboot-2018\\USBWebserver/apache2/bin/httpd_usbwv8.exe -d C:/Users/coe18161676/Documents/neueda-git/neueda-springboot-2018/USBWebserver/apache2'
-[Tue Dec 04 14:08:13.153734 2018] [mpm_winnt:notice] [pid 10820:tid 816] AH00418: Parent: Created child process 3060

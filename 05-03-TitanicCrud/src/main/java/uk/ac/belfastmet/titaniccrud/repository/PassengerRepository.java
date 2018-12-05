@@ -5,6 +5,8 @@ import uk.ac.belfastmet.titaniccrud.domain.Passenger;
 
 public interface PassengerRepository extends CrudRepository<Passenger, Integer> {
 	
+	
+	//Query
 	Iterable<Passenger> findByName(String name);
 
 	Passenger findByPassengerId(Integer passengerId);
