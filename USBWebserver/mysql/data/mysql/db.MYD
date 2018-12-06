@@ -4,3 +4,6 @@ Version: '5.6.13'  socket: ''  port: 3306  MySQL Community Server (GPL)
 2018-12-05 10:15:03 1344 [Note] Event Scheduler: Loaded 0 events
 2018-12-05 10:15:03 1344 [Note] C:\Users\coe18161676\Documents\neueda-git\neueda-springboot-2018\USBWebserver/mysql/bin/mysqld_usbwv8.exe: ready for connections.
 Version: '5.6.13'  socket: ''  port: 3306  MySQL Community Server (GPL)
+2018-12-06 12:11:08 7780 [Note] Event Scheduler: Loaded 0 events
+2018-12-06 12:11:08 7780 [Note] C:\Users\coe18161676\Documents\neueda-git\neueda-springboot-2018\USBWebserver/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.6.13'  socket: ''  port: 3306  MySQL Community Server (GPL)

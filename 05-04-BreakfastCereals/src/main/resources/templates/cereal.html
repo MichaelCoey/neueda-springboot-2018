@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+		<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="/css/styles.css"/>
+		<link href = "https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet"/>
+		<title th:text=${pageTitle}>Cereal Page</title>
+	</head>
+	<body>
+	
+			<div style = "background-color: #62ddd7;" class="jumbotron text-center">
+				<h1 th:text="${pageTitle}" class="display-4">Cereals</h1>
+			</div>
+
+			<nav th:replace="layouts/nav :: navFragment">
+			
+			</nav>
+		
+		<div class = "container-fluid">
+		
+			<div id = "mainContent">
+				
+				<section class= "row">
+					<article class = "col-12">
+						
+						<div id="successDiv" class="alert alert-success" role ="alert" th:if="${message}">
+							<p th:text="${message} + ': ' + ${messageId}"></p>
+							<button id="successOk" type="button" class="btn btn-primary">Okay</button>
+						</div>
+						
+						<p><a href="" th:href="@{/add/}"> Add New</a></p>
+						
+						<table class = "table table-striped">
+							<thead>
+								<tr>
+									<th>Cereal Id</th>
+									<th>Manufacturer</th>
+									<th>Cereal</th>
+									<th>Energy</th>
+									<th>Calories</th>
+									<th>Protein</th>
+									<th>Carbohydrate</th>
+									<th>Sugars</th>
+									<th>Fat</th>
+									<th>Saturates</th>
+									<th>Fibre</th>
+									<th>Sodium</th>
+									<th>Salt</th>
+									<th>Iron</th>
+									<th>Controls</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="cereal: ${cereals}">
+									<td th:text=${cereal.cerealId}></td>
+									<td th:text=${cereal.manufacturer}></td>
+									<td th:text=${cereal.cereal}></td>
+									<td th:text=${cereal.energy}></td>
+									<td th:text=${cereal.calories}></td>
+									<td th:text=${cereal.protein}></td>
+									<td th:text=${cereal.carbohydrate}></td>
+									<td th:text=${cereal.sugars}></td>
+									<td th:text=${cereal.fat}></td>
+									<td th:text=${cereal.saturates}></td>
+									<td th:text=${cereal.fibre}></td>
+									<td th:text=${cereal.sodium}></td>
+									<td th:text=${cereal.salt}></td>
+									<td th:text=${cereal.iron}></td>
+									<td><a href="" th:href="@{/view/}+${cereal.cerealId}">View</a>
+									<a href="" th:href="@{/edit/}+${cereal.cerealId}"> Edit</a>
+									<a style="color:red;" href="" th:href="@{/delete/}+${cereal.cerealId}"> Delete</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<p><a href="" th:href="@{/add/}"> Add New</a></p>
+						
+					</article>
+				</section>
+				
+			</div>
+			
+		</div>
+		<nav th:replace="layouts/footer :: footerFragment">
+			
+		</nav>
+		
+		<script src="js/jquery.slim.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script>
+		$(document).ready(function(){
+		    $("#successOk").click(function(){
+		    	$("#successDiv").remove();
+		    });
+		});
+		</script>
+	</body>
+</html>
