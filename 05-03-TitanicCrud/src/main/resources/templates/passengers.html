@@ -32,7 +32,7 @@
 							<button id="successOk" type="button" class="btn btn-primary">Ok</button>
 						</div>
 						
-						<button type="button" class="btn btn-success">Add Record +</button>
+						<p><a href="" th:href="@{/add/}"> Add New</a></p>
 						
 						<table class = "table table-striped">
 							<thead>
@@ -67,13 +67,14 @@
 									<td th:text=${passenger.cabin}></td>
 									<td th:text=${passenger.embarked}></td>
 									<td><a href="" th:href="@{/view/}+${passenger.passengerId}">View</a>
-									<a href=""> Edit</a>
+									<a href="" th:href="@{/edit/}+${passenger.passengerId}"> Edit</a>
 									<a style="color:red;" href="" th:href="@{/delete/}+${passenger.passengerId}"> Delete</a>
 									</td>
 								</tr>
 							</tbody>
 						</table>
 						
+						<p><a href="" th:href="@{/add/}"> Add New</a></p>
 						
 					</article>
 				</section>

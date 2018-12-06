@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+		<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="/css/styles.css"/>
+		<link href = "https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet"/>
+		<title th:text=${pageTitle}>Passenger Page</title>
+	</head>
+	<body>
+	
+			<div style = "background-color: #62ddd7;" class="jumbotron text-center">
+				<h1 th:text="${pageTitle}" class="display-4">Passengers</h1>
+			</div>
+
+			<nav th:replace="layouts/nav :: navFragment">
+			
+			</nav>
+		
+		<div class = "container-fluid">
+		
+			<div id = "mainContent">
+				
+				<section class= "row">
+					<article class = "col-12">
+						
+						<form class = "form-horizontal" th:action="@{/save}" method="post">
+						
+						<table class = "table table-striped">
+							<thead>
+								<tr>
+									<th>Column</th>
+									<th>Value</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Passenger ID</td>
+									<td><input type ="text" readonly="readonly" th:field=${Passengers.passengerId}></input></td>
+								</tr>
+								
+								<tr>
+									<td>Survived</td>
+									<td><input type="text" class = "form-control" th:field=${Passengers.survived}></input></td>
+								</tr>
+									
+								<tr>
+									<td>Passenger Class</td>
+									<td><input type="text" class = "form-control" th:field=${Passengers.pClass}></input></td>
+								</tr>
+									
+								<tr>
+									<td>Name</td>
+									<td><input type="text" class = "form-control" th:field=${Passengers.name}></input></td>
+								</tr>
+								
+								<tr>
+									<td>Sex</td>
+									<td><input type="text" class = "form-control" th:field=${Passengers.sex}></input</td>
+								</tr>
+								
+								<tr>
+									<td>Age</td>
+									<td><input type="text" class = "form-control" th:field=${Passengers.age}></input></td>
+								</tr>
+									
+								<tr>
+									<td>SibSp</td>
+									<td><input type="text" class = "form-control" th:field=${Passengers.sibSp}></input></td>
+								</tr>
+									
+								<tr>
+									<td>Parch</td>
+									<td><input type="text" class = "form-control" th:field=${Passengers.parch}></input</td>
+								</tr>
+								
+								<tr>
+									<td>Ticket</td>
+									<td><input type="text" class = "form-control" th:field=${Passengers.ticket}></input></td>
+								</tr>
+								
+								<tr>
+									<td>Fare</td>
+									<td><input type="text" class = "form-control" th:field=${Passengers.fare}></input></td>
+								</tr>
+								
+								<tr>
+									<td>Cabin</td>
+									<td><input type="text" class = "form-control" th:field=${Passengers.cabin}></input></td>
+								</tr>
+									
+								<tr>
+									<td>Embarked</td>
+									<td><input type="text" class = "form-control" th:field=${Passengers.embarked}></input</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<button type="submit" class="btn btn-primary">Save</button>
+						
+						</form>
+						
+					</article>
+				</section>
+				
+			</div>
+			
+		</div>
+		<nav th:replace="layouts/footer :: footerFragment">
+			
+		</nav>
+		
+		<script src="js/jquery.slim.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
