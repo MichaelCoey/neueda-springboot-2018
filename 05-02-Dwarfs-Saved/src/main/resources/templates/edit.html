@@ -5,19 +5,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
-		<link rel="stylesheet" href="css/bootstrap.min.css"/>
-		<link rel="stylesheet" href="css/styles.css"/>
+		<link rel="stylesheet" href="../css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="../css/styles.css"/>
 		<link href = "https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet"/>
 		<title th:text=${pageTitle}>Dwarfs page</title>
 	</head>
 	<body>
 	
 			<div style = "background-color: #62ddd7;" class="jumbotron text-center">
-				<h1 th:text="${pageTitle} + ' ' + Dwarfs" class="display-4">Dwarfs</h1>
-			</div>
-			
-			<div class="alert alert-success" role ="alert" th:if="${message}">
-				<p th:text="${message} + ': ' + ${messageId}"></p>
+				<h1 th:text="${pageTitle} + ' ' + Dwarfs" class="display-4">Edit</h1>
 			</div>
 
 			<nav th:replace="layouts/nav :: navFragment">
@@ -31,31 +27,48 @@
 				<section class= "row">
 					<article class = "col-12">
 						
-						<p><a href="" th:href="@{/add/}"> Add New</a></p>
+						<form class = "form-horizontal" th:action="@{/save}" method="post">
 						
+
 						<table class = "table table-striped">
 							<thead>
 								<tr>
-									<th>Name</th>
-									<th>Author</th>
-									<th>Image</th>
-									<th>Controls</th>
+									<th>Column</th>
+									<th>Value</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr th:each="dwarf: ${disneyDwarfs}">
-									<td th:text=${dwarf.name}>Happy</td>
-									<td th:text=${dwarf.author}>Disney</td>
-									<td><img src="../static/img/Happy.png" th:src="@{/img/}+${dwarf.image}"></td>
-									<td><a href="#" th:href="@{/view/}+${dwarf.dwarfId}">View</a>
-									<a href="" th:href="@{/edit/}+${dwarf.dwarfId}"> Edit</a>
-									<a style="color:red;" href="" th:href="@{/delete/}+${dwarf.dwarfId}"> Delete</a>
-									</td>
+								<tr>
+								
+								<td>ID</td>
+								<td><input type ="text" readonly="readonly" th:field = "${dwarf.dwarfId}"></input></td>
+								
 								</tr>
+								
+								<tr>
+								<td>Name</td>
+								<td><input type="text" class = "form-control" th:field = "${dwarf.name}"></input>
+								<span style="color:red;" th:if="${#fields.hasErrors('dwarf.name')}" th:errors="${dwarf.name}"
+								th:class="help-block">Not empty</span>
+								</td>
+								</tr>
+								
+								<tr>
+								<td>Author</td>
+								<td><input type="text" class = "form-control" th:field = "${dwarf.author}"></input></td>
+								</tr>
+								
+								<tr>
+								<td>Image</td>
+								<td><input type="text" class = "form-control" th:field = "${dwarf.image}"></input></td>
+								</tr>
+								
 							</tbody>
 						</table>
 						
-						<p><a href="" th:href="@{/add/}"> Add New</a></p>
+						<button type="submit" class="btn btn-primary">Save</button>
+						
+						</form>
 						
 					</article>
 				</section>

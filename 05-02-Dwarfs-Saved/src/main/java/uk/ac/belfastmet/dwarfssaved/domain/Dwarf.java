@@ -3,6 +3,7 @@ package uk.ac.belfastmet.dwarfssaved.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Dwarf {
@@ -10,6 +11,7 @@ public class Dwarf {
 	@Id
 	@GeneratedValue
 	private Integer dwarfId;
+	@NotEmpty
 	private String name;
 	private String author;
 	private String image;
