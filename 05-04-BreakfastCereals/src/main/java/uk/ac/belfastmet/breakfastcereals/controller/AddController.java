@@ -30,7 +30,7 @@ public class AddController {
 		model.addAttribute("pageTitle", "Add");
 		model.addAttribute("cereals", new Cereal());
 		
-		return "edit";
+		return "edit.html";
 	}
 	
 	@PostMapping("save")
@@ -45,7 +45,7 @@ public class AddController {
 		}
 		else {
 			
-			Cereal savedPassenger = this.cerealRepository.save(cereal);
+			Cereal savedCereal = this.cerealRepository.save(cereal);
 			return "redirect:/view/" + cereal.getCerealId();
 			
 		}
