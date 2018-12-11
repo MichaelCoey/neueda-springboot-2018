@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<!-- Bootstrap core CSS -->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/styles.css" rel="stylesheet">
+<title th:text="${pageTitle}">Titanic</title>
+</head>
+<body>
+	<div class="container">
+		<nav th:replace="layouts/nav :: navFragment"></nav>
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container text-center">
+
+				<h1 th:text="${passenger.name}" class="display-4">Titanic
+					Passengers</h1>
+
+
+			</div>
+		</div>
+
+		<div class="container" style="text-align: center">
+			<form class="form-horizontal" th:action="@{/save}" method="post">
+							<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Column</th>
+						<th>Value</th>
+
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+					<td>Dwarf ID:</td>
+					<td><input type="text" readonly="readonly" th:field="${passenger.passengerId}"></input></td>
+					</tr>
+						<tr>
+						<td>Name:</td>
+						<td> <input type="text" class="form-control" th:field="${passenger.name}"></input>
+						<span th:if="${#fields.hasErrors('passenger.name')}" th:errors="${passenger.name}" th:class="help-block">Name cannot be empty</span>
+						</td>
+						</tr>
+						<tr>
+						<td>Survived:</td>
+						<td> <input type="text" class="form-control" th:field="${passenger.survived}"></td>
+						</tr>
+						<tr>
+						<td>P Class:</td>
+						<td> <input type="text" class="form-control" th:field="${passenger.pClass}"></td></tr>		
+												<tr>
+						<td>Sex:</td>
+						<td> <input type="text" class="form-control" th:field="${passenger.sex}"></td></tr>
+											<tr>
+						<td>Age:</td>
+						<td> <input type="text" class="form-control" th:field="${passenger.age}"></td></tr>
+												<tr>
+						<td>Siblings/Spouses:</td>
+						<td> <input type="text" class="form-control" th:field="${passenger.sibSp}"></td></tr>
+										<tr>
+						<td>Parch:</td>
+						<td> <input type="text" class="form-control" th:field="${passenger.parch}"></td></tr>
+												<tr>
+						<td>Ticket:</td>
+						<td> <input type="text" class="form-control" th:field="${passenger.ticket}"></td></tr>
+												<tr>
+						<td>Fare</td>
+						<td> <input type="text" class="form-control" th:field="${passenger.fare}"></td></tr>
+												<tr>
+						<td>Cabin</td>
+						<td> <input type="text" class="form-control" th:field="${passenger.cabin}"></td></tr>
+												<tr>
+						<td>Embarked</td>
+						<td> <input type="text" class="form-control" th:field="${passenger.embarked}"></td></tr>
+				
+				
+				</tbody>
+			</table>
+				<button type="submit" class="btn btn-primary">Save</button>
+				<br/><br/>
+			</form>
+		</div>
+		<footer class="section footer-classic context-dark bg-image"
+			style="background: #204060;">
+			<div class="container">
+				<center>
+					<div class="row row-30">
+
+						<div class="col-md-4">
+							<br>
+							<h5>Plan Your Trip</h5>
+							<ul class="nav-list">
+								<li><a href="#">Areas</a></li>
+								<li><a href="#">Getting Around</a></li>
+								<li><a href="#">Maps</a></li>
+								<li><a href="#">Travel Tips</a></li>
+
+							</ul>
+
+						</div>
+						<div class="col-md-4">
+							<br>
+							<h5>Stay</h5>
+							<ul class="nav-list">
+								<li><a href="#">Camping</a></li>
+								<li><a href="#">Guest Houses</a></li>
+								<li><a href="#">Hostels</a></li>
+								<li><a href="#">Hotels</a></li>
+							</ul>
+						</div>
+						<div class="col-md-4">
+							<br>
+							<h5>Contact Us</h5>
+							<dl class="contact-list">
+								<dt>Address:</dt>
+								<dd>
+									Queens Road, Belfast,<br> BT1 1TD
+								</dd>
+							</dl>
+							<dl class="contact-list">
+								<dt>email:</dt>
+								<dd>
+									<a href="mailto:#">ExploreBelfast.com</a>
+								</dd>
+							</dl>
+							<dl class="contact-list">
+								<dt>Phone:</dt>
+								<dd>
+									<a href="tel:#">(028) 90123456</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</center>
+			</div>
+
+		</footer>
+
+	</div>
+
+	<script src="js/jquery.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

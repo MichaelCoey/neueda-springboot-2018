@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<!-- Bootstrap core CSS -->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/styles.css" rel="stylesheet">
+<title th:text="${pageTitle}">Titanic</title>
+</head>
+<body>
+	<div class="container">
+		<nav th:replace="layouts/nav :: navFragment"></nav>
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container text-center">
+
+				<h1 class="display-4">Titanic Passengers</h1>
+
+
+			</div>
+		</div>
+
+		<div class="alert alert-success" role="alert" th:if="${message}">
+			<p th:text="${message}"></p>
+		</div>
+		
+												<p>
+			<a href='#' th:href="@{/titanic/add/}">Add new Passenger</a>
+		</p>
+
+		<div class="container">
+			<input type="text" id="myInput" onkeyup="myFunction()"
+				placeholder="Search for names.." title="Type in a name"
+				class="form-control"><br />
+			<table class="table table-striped" id="myTable">
+				<thead>
+					<tr>
+						<th>Passenger ID</th>
+						<th>Survived</th>
+						<th>Name</th>
+						<th>Age</th>
+						<th>Sex</th>
+						<th>Ticket</th>
+
+
+						<th></th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="passenger: ${passengers}">
+						<td th:text="${passenger.passengerId}"></td>
+						<td th:text="${passenger.survived}"></td>
+						<td th:text="${passenger.name}"></td>
+						<td th:text="${passenger.age}"></td>
+						<td th:text="${passenger.sex}"></td>
+						<td th:text="${passenger.ticket}"></td>
+
+
+						<td><a class="btn btn-primary" href="#"
+							th:href="@{/titanic/view/} + ${passenger.passengerId}">View</a><br />
+						<br /> <a class="btn btn-success" href="#"
+							th:href="@{/titanic/edit/} + ${passenger.passengerId}">Edit</a><br />
+						<br /> <a class="btn btn-danger" href="#"
+							th:href="@{/titanic/delete/} + ${passenger.passengerId}">Delete</a></td>
+
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		<footer class="section footer-classic context-dark bg-image"
+			style="background: #204060;">
+			<div class="container">
+				<center>
+					<div class="row row-30">
+
+						<div class="col-md-4">
+							<br>
+							<h5>Plan Your Trip</h5>
+							<ul class="nav-list">
+								<li><a href="#">Areas</a></li>
+								<li><a href="#">Getting Around</a></li>
+								<li><a href="#">Maps</a></li>
+								<li><a href="#">Travel Tips</a></li>
+
+							</ul>
+
+						</div>
+						<div class="col-md-4">
+							<br>
+							<h5>Stay</h5>
+							<ul class="nav-list">
+								<li><a href="#">Camping</a></li>
+								<li><a href="#">Guest Houses</a></li>
+								<li><a href="#">Hostels</a></li>
+								<li><a href="#">Hotels</a></li>
+							</ul>
+						</div>
+						<div class="col-md-4">
+							<br>
+							<h5>Contact Us</h5>
+							<dl class="contact-list">
+								<dt>Address:</dt>
+								<dd>
+									Queens Road, Belfast,<br> BT1 1TD
+								</dd>
+							</dl>
+							<dl class="contact-list">
+								<dt>email:</dt>
+								<dd>
+									<a href="mailto:#">ExploreBelfast.com</a>
+								</dd>
+							</dl>
+							<dl class="contact-list">
+								<dt>Phone:</dt>
+								<dd>
+									<a href="tel:#">(028) 90123456</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</center>
+			</div>
+
+		</footer>
+
+	</div>
+	<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[2];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+	<script src="/js/jquery.slim.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

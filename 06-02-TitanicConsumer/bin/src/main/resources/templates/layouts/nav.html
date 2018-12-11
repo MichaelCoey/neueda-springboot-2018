@@ -1,0 +1,40 @@
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-primary"
+		th:fragment="navFragment">
+		<button class="navbar-toggler" data-toggle="collapse"
+			data-target="#collapse_target">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapse_target">
+
+			<ul class="navbar-nav nav-fill w-100">
+
+				<li class="nav-item"><a class="nav-link" href="/"
+					style="color: white"><i class="fa fa-fw fa-home"></i>Home</a></li>
+
+				<li class="nav-item"><a class="nav-link" href="/passenger"
+					style="color: white"><i class="fa fa-fw fa-envelope"></i>Passengers</a></li>
+
+
+
+				<form action="/searchid" method="get"
+					class="form-inline my-2 my-lg-0">
+
+					<center>
+					<li class="nav-item" style="border-right:none;"> 
+						<input type="text" name="id" class="form-control"
+							placeholder="Enter Passenger ID" style="width: 60%;" />
+						<button type="submit" class="btn btn-success">Search</button>
+						</li>
+					</center>
+				</form>
+
+
+
+			</ul>
+
+		</div>
+	</nav>
+</body>
+</html>

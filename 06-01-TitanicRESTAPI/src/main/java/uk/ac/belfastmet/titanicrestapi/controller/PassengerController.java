@@ -1,5 +1,8 @@
 package uk.ac.belfastmet.titanicrestapi.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,15 +29,19 @@ public class PassengerController {
 	}
 
 	@GetMapping("passengers")
-	public Iterable<Passenger> getAllPassengers() {
+	public Map<String, Object> getAllPassengers() {
 		
+		Map<String, Object> passengersMap = new HashMap<String, Object>();
 		
+		passengersMap.put("allPassengers", this.passengerRepository.findAll());
 		
-		return this.passengerRepository.findAll();
+		return passengersMap;
 	}
 	
-	@GetMapping("passenger/{passengerId}")
-	public Iterable<Passenger> getPassenger(@PathVariable("passengerId") Integer passengerId) {
+
+	
+	@GetMapping("passengers/{passengerId}")
+	public Passenger getPassenger(@PathVariable("passengerId") Integer passengerId) {
 		
 		
 		
@@ -42,7 +49,7 @@ public class PassengerController {
 	}
 	
 	
-	@DeleteMapping("passenger/{passengerId}")
+	@DeleteMapping("passengers/{passengerId}")
 	public String deletePassenger(@PathVariable("passengerId") Integer passengerId) {
 		
 		
