@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+		<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="/css/styles.css"/>
+		<link href = "https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet"/>
+		<title>Events</title>
+	</head>
+	<body>
+	
+			<div style = "background-color: #62ddd7;" class="jumbotron text-center">
+				<h1  class="display-4">Events</h1>
+			</div>
+			
+
+
+			<nav th:replace="layouts/nav :: navFragment">
+			
+			</nav>
+		
+		<div class = "container-fluid">
+		
+			<div id = "mainContent">
+				
+				<section class= "row">
+					<article class = "col-12">
+						
+						
+						<table class = "table table-striped">
+							<thead>
+								<tr>
+									<th>City</th>
+									<th>Latitude</th>
+									<th>Longitude</th>
+									<th>Description</th>
+									<th>Precipitation</th>
+									<th>Temperature</th>
+									<th>Humidity</th>
+									<th>Pressure</th>
+									<th>Cloud Cover</th>
+									<th>Speed</th>
+									<th>Direction</th>
+									<th>Image</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="events: ${events}">
+									
+									<td th:text=${events.identifier}></td>
+
+								</tr>
+							</tbody>
+						</table>
+						
+					</article>
+				</section>
+				
+			</div>
+			
+		</div>
+		<nav th:replace="layouts/footer :: footerFragment">
+			
+		</nav>
+		
+		<script src="/js/jquery.slim.min.js"></script>
+		<script src="/js/popper.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+	</body>
+</html>
