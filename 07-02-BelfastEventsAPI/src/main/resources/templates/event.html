@@ -38,17 +38,17 @@
 									<th>Start Date</th>
 									<th>Venue</th>
 									<th>Cost</th>
+									<th>Controls</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr th:each="events: ${events}">
-									
 									<td th:text=${events.identifier}></td>
 									<td th:text=${events.title}></td>
 									<td th:text="${#dates.format(events.startDate, 'dd/MM/yyyy')}"></td>
 									<td th:text=${events.venue}></td>
 									<td th:text=${events.cost}></td>
-
+									<td><a href="" >View</a></td>
 								</tr>
 							</tbody>
 						</table>
