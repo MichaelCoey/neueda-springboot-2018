@@ -36,7 +36,7 @@ public class EventsContoller {
 		AllEvents events = restTemplate.getForObject(eventsUrl, AllEvents.class);
 		
 		
-		model.addAttribute("events", events);
+		model.addAttribute("events", events.getAllEvents());
 		
 		
 		Logger logger = LoggerFactory.getLogger(Events.class);
