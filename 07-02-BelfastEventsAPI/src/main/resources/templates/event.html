@@ -27,21 +27,16 @@
 			<div id = "mainContent">
 				
 				<section class= "row">
-					<article class = "col-6">
+					<article class = "col-12">
 						
 						
 						<table class = "table table-striped">
 							<thead>
 								<tr>
     								<th>Identifier</th>
-									<th>Url</th>
 									<th>Title</th>
 									<th>Start Date</th>
-									<th>End Date</th>
 									<th>Venue</th>
-									<th>VenueUrl</th>
-									<th>Image</th>
-									<th>Theme</th>
 									<th>Cost</th>
 								</tr>
 							</thead>
@@ -49,14 +44,9 @@
 								<tr th:each="events: ${events}">
 									
 									<td th:text=${events.identifier}></td>
-									<td th:text=${events.url}></td>
 									<td th:text=${events.title}></td>
-									<td th:text=${events.startDate}></td>
-									<td th:text=${events.endDate}></td>
+									<td th:text="${#dates.format(events.startDate, 'dd/MM/yyyy')}"></td>
 									<td th:text=${events.venue}></td>
-									<td th:text=${events.venueUrl}></td>
-									<td th:text=${events.image}></td>
-									<td th:text=${events.theme}></td>
 									<td th:text=${events.cost}></td>
 
 								</tr>
