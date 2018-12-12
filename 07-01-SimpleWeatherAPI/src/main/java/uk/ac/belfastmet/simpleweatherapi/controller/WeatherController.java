@@ -44,5 +44,28 @@ public class WeatherController {
 				
 		return "weather.html";
 	}
+	
+	@GetMapping("/weathers")
+	public String allLocations(Model model) {
+		
+		//URL Links
+		String belfastWeatherUrl = "http://www.codingfury.net/training/weathersample/weather.php?location=belfast";
+		String dublinWeatherUrl = "http://www.codingfury.net/training/weathersample/weather.php?location=dublin";
+		String londonWeatherUrl = "http://www.codingfury.net/training/weathersample/weather.php?location=london";
+		
+		//Does not usually go here
+		RestTemplate restTemplate = new RestTemplate();
+		
+		TodaysWeather belfastWeather = restTemplate.getForObject(belfastWeatherUrl, TodaysWeather.class);
+		TodaysWeather dublinWeather = restTemplate.getForObject(dublinWeatherUrl, TodaysWeather.class);
+		TodaysWeather londonWeather = restTemplate.getForObject(londonWeatherUrl, TodaysWeather.class);
+		
+		//Adding the object
+		model.addAttribute("belfastWeather", belfastWeather);
+		model.addAttribute("dublinWeather", dublinWeather);
+		model.addAttribute("londonWeather", londonWeather);
+				
+		return "weathers.html";
+	}
 
 }

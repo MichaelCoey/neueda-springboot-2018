@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+		<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="/css/styles.css"/>
+		<link href = "https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet"/>
+		<title>Weather</title>
+	</head>
+	<body>
+	
+			<div style = "background-color: #62ddd7;" class="jumbotron text-center">
+				<h1  class="display-4">Weather</h1>
+			</div>
+			
+			<div class="alert alert-success" role ="alert" th:if="${message}">
+				<p ></p>
+			</div>
+
+			<nav th:replace="layouts/nav :: navFragment">
+			
+			</nav>
+		
+		<div class = "container-fluid">
+		
+			<div id = "mainContent">
+				
+				<section class= "row">
+					<article class = "col-12">
+						
+						
+						<table class = "table table-striped">
+							<thead>
+								<tr>
+									<th>City</th>
+									<th>Latitude</th>
+									<th>Longitude</th>
+									<th>Description</th>
+									<th>Precipitation</th>
+									<th>Temperature</th>
+									<th>Humidity</th>
+									<th>Pressure</th>
+									<th>Cloud Cover</th>
+									<th>Speed</th>
+									<th>Direction</th>
+									<th>Image</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td th:text=${belfastWeather.location.name}>Location</td>
+									<td th:text=${belfastWeather.location.latitude}>Location</td>
+									<td th:text=${belfastWeather.location.longitude}>Location</td>
+									<td th:text=${belfastWeather.weather.description}>Location</td>
+									<td th:text=${belfastWeather.weather.precipitation}>Location</td>
+									<td th:text=${belfastWeather.weather.temperature}>Location</td>
+									<td th:text=${belfastWeather.weather.humidity}>Location</td>
+									<td th:text=${belfastWeather.weather.pressure}>Location</td>
+									<td th:text=${belfastWeather.weather.cloudcover}>Location</td>
+									<td th:text=${belfastWeather.weather.wind.speed}>Location</td>
+									<td th:text=${belfastWeather.weather.wind.direction}>Location</td>
+									<td><img src="" th:src ="${belfastWeather.weather.image}"/></td>
+								</tr>
+								<tr>
+									<td th:text=${dublinWeather.location.name}>Location</td>
+									<td th:text=${dublinWeather.location.latitude}>Location</td>
+									<td th:text=${dublinWeather.location.longitude}>Location</td>
+									<td th:text=${dublinWeather.weather.description}>Location</td>
+									<td th:text=${dublinWeather.weather.precipitation}>Location</td>
+									<td th:text=${dublinWeather.weather.temperature}>Location</td>
+									<td th:text=${dublinWeather.weather.humidity}>Location</td>
+									<td th:text=${dublinWeather.weather.pressure}>Location</td>
+									<td th:text=${dublinWeather.weather.cloudcover}>Location</td>
+									<td th:text=${dublinWeather.weather.wind.speed}>Location</td>
+									<td th:text=${dublinWeather.weather.wind.direction}>Location</td>
+									<td><img src="" th:src ="${dublinWeather.weather.image}"/></td>
+								</tr>
+								<tr>
+									<td th:text=${londonWeather.location.name}>Location</td>
+									<td th:text=${londonWeather.location.latitude}>Location</td>
+									<td th:text=${londonWeather.location.longitude}>Location</td>
+									<td th:text=${londonWeather.weather.description}>Location</td>
+									<td th:text=${londonWeather.weather.precipitation}>Location</td>
+									<td th:text=${londonWeather.weather.temperature}>Location</td>
+									<td th:text=${londonWeather.weather.humidity}>Location</td>
+									<td th:text=${londonWeather.weather.pressure}>Location</td>
+									<td th:text=${londonWeather.weather.cloudcover}>Location</td>
+									<td th:text=${londonWeather.weather.wind.speed}>Location</td>
+									<td th:text=${londonWeather.weather.wind.direction}>Location</td>
+									<td><img src="" th:src ="${londonWeather.weather.image}"/></td>
+								</tr>
+							</tbody>
+						</table>
+						
+					</article>
+				</section>
+				
+			</div>
+			
+		</div>
+		<nav th:replace="layouts/footer :: footerFragment">
+			
+		</nav>
+		
+		<script src="/js/jquery.slim.min.js"></script>
+		<script src="/js/popper.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+	</body>
+</html>
