@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+		<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="/css/styles.css"/>
+		<link href = "https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet"/>
+		<title th:text="${pageTitle}">MLAS</title>
+	</head>
+	<body>
+	
+			<div style = "background-color: #62ddd7;" class="jumbotron text-center">
+				<h1 th:text="${bannerName}"  class="display-4">MLAs</h1>
+			</div>
+			
+			<div class="alert alert-success" role ="alert" th:if="${message}">
+				<p ></p>
+			</div>
+
+			<nav th:replace="layouts/nav :: navFragment">
+			
+			</nav>
+		
+		<div class = "container-fluid">
+		
+			<div id = "mainContent">
+				
+				<section class= "row">
+					<article class = "col-12">
+						
+						
+						<table class = "table table-striped">
+							<thead>
+								<tr>
+									<th>Person ID</th>
+									<th>Affiliation ID</th>
+									<th>Member Name</th>
+									<th>Member Last Name</th>
+									<th>Member First Name</th>
+									<th>Member Full Display Name</th>
+									<th>Member Sort Name</th>
+									<th>Member Title</th>
+									<th>Party Name</th>
+									<th>Party ID</th>
+									<th>Constituency Name</th>
+									<th>Constituency ID</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each = "member: ${members}">
+									<td th:text="${member.personId}">Person ID</td>
+									<td th:text="${member.affiliationId}">Affiliation ID</td>
+									<td th:text="${member.memberName}">Member Name</td>
+									<td th:text="${member.memberLastName}">Member Last Name</td>
+									<td th:text="${member.memberFirstName}">Member First Name</td>
+									<td th:text="${member.memberFullDisplayName}">Member Full Display Name</td>
+									<td th:text="${member.memberSortName}">Member Sort Name</td>
+									<td th:text="${member.memberTitle}">Member Title</td>
+									<td th:text="${member.partyName}">Party Name</td>
+									<td th:text="${member.partyOrganisationId}">Party Organisation Id</td>
+									<td th:text="${member.constituencyName}">Constituency Name</td>
+									<td th:text="${member.constituencyId}">Constituency Id</td>
+								</tr>
+							</tbody>
+						</table>
+						
+					</article>
+				</section>
+				
+			</div>
+			
+		</div>
+		<nav th:replace="layouts/footer :: footerFragment">
+			
+		</nav>
+		
+		<script src="/js/jquery.slim.min.js"></script>
+		<script src="/js/popper.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+	</body>
+</html>
